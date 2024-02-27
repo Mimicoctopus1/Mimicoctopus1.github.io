@@ -5,7 +5,7 @@ var account = {
     }
     if(document.querySelectorAll(".unimono-account-iframe").length <= 0) /*If there isn't already an iframe...*/{
       document.body.append("<div class = 'unimono-account-iframe'><iframe></iframe><noframes onclick = 'this.remove'>Uh oh! The feature allowing access to UNIMONO accounts is not working. Certain parts of this site might not be usable. Click this box to continue without UNIMONO account linking.</noframes></div>");
-  }
+  },
   "accounts": [],
   "requestAccess": function(granted, denied) {
     let requestAccessPopup = window.open("", "UNIMONO_Account_Verification", "");
