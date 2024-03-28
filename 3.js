@@ -24,8 +24,52 @@ var unimono3d = {
           this.x /= vector.x;
           this.y /= vector.y;
           this.z /= vector.z;
-        }
+				},
+				"magnitude": function() {/*To find the magnitude of the vector, the Pythagorean Theorem is to be used twice. There are lots of videos like this one     shorturl.at/jEQX0     */
+					return();
+				}
       });
+  },
+  "ray": function(xorv, yorv, z, ax, ay, az, speed) {
+    if(xorv.type == "vector") { /*Convert xorv through az into vector1 and vector2.*/
+      let vector1 = xorv;
+      if(yorv.type == "vector") {
+        let vector2 = yorv;
+      } else {
+        let vector2 = unimono.vector(yorv, z, ax);
+      }
+    } else {
+      let vector1 = unimono.vector(xorv, yorv, z);
+      if(ax.type == "vector") {
+        let vector2 = ax;
+      } else {
+        let vector2 = unimono.vector(ax, ay, az);
+      }
+    }
+    
+    if(speed == "velocity") {/*If speed is the keyword "vector"...*/
+      return({
+        "position": vector1,
+				"angle": "WIP",
+				"velocity": vector2,
+				"speed":
+      });
+    } else {
+      return({
+      	"position": vector1,
+        "angle": unimono.vector(,
+				"velocity": "WIP";,
+        "speed": speed,
+        "type": "ray"
+      });
+    }
+  },
+  "camera": function(x, y, z, ax, ay, az) {
+    return({
+      "position": unimono.vector(x, y, z),
+      "angle": unimono.vector(ax, ay, az),
+      "type": "camera"
+    });
   },
   "triangle": function(x1, y1, z1, x2, y2, z2, x3, y3, z3) {
     return({
@@ -172,22 +216,17 @@ var unimono3d = {
       throw("ERROR trying to read the file " + filename + ": " + error);
     }
   },
-  "setRenderer": function(canvas) {
-    canvas.render = function(arrayToRenderer) {
-      let array = [arrayToRenderer].flat(); /*Put array in an array to ensure it is an array, then flatten it.*/
-      let graphs = [];
-      while(array.length > 0) {
-        graphs[graphs.length] = unimono3d.findOrthagonal(array[0], true);
-        array.splice(0, 1);/*Get rid of the array[0], moving the others back.*/
-      }
-    };
-  },
-  "globalize": function(names) {
-    if(names == undefined) {
-      var {vector, triangle, origin, render, globalize, convertFile, setRenderer} = unimono3d; /*Take the current object and split its functions into variables.*/
-    } else {
-      var names = unimono3d;
+  "render": function(canvas, camera, dataToRender) {/*TODO: take into fact that maybe the camera is at an angle.*/
+    let data = dataToRender.flat();
+    let trianglesFound = 0;
+    let graphs = [];
+    while(trianglesFound < data.length) {
+      graphs[graphs.length] = findPlane(data[trianglesFound]);
+      trianglesFound += 1;
     }
+  },
+  "globalize": function() {
+    var {vector, triangle, origin, globalize, convertFile, render} = unimono3d; /*Take the current object and split its functions into variables.*/
   }
 }
 
