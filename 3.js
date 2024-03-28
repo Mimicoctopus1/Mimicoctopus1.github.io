@@ -26,7 +26,7 @@ var unimono3d = {
           this.z /= vector.z;
 				},
 				"magnitude": function() {/*To find the magnitude of the vector, the Pythagorean Theorem is to be used twice. There are lots of videos like this one     shorturl.at/jEQX0     */
-					return();
+					return("hi");
 				}
       });
   },
