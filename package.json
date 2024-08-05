@@ -1,0 +1,41 @@
+{
+  "name": "ojvjpj",
+  "version": "0.1.0",
+  "description": "A fun adventure game on Glitch! Note: This is a Work In Progress, so please don't get mad it's not finished.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@fastify/formbody": "^7.4.0",
+    "@fastify/static": "^6.12.0",
+    "@fastify/view": "^8.2.0",
+    "express": "^4.18.2",
+    "fastify": "^4.25.2",
+    "handlebars": "^4.7.8",
+    "nano": "^10.1.3",
+    "nodemailer": "^6.9.8",
+    "screen-recording": "^1.0.5",
+    "socket.io": "^4.6.0"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/ojvjpj"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "socket.io",
+    "text adventure",
+    "game",
+    "multiplayer",
+    "mmo",
+    "fun",
+    "3d"
+  ],
+  "author": ""
+}
