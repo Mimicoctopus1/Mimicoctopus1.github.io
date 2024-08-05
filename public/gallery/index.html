@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+      Gallery
+    </title>
+		<meta charset="utf-8" />
+    <style>
+      .model {
+        border: 1px solid black;
+      }
+      
+      model-viewer {
+        width: 900px; height: 500px;
+      }
+    </style>
+	</head>
+	<body>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <!--Import the model viewer designed at modelviewer.dev-->
+    <h1>The Gallery</h1>
+		<!--
+alt is the text that a screenreader will read. On an image it pops up when you hover your mouse over it. src is the file to get the 3D model from
+src is the URL for the 3D model. <model-viewer> only accepts .glb and .gltf files.
+skybox-image is the URL for the background. Use .jpg and .jpeg for best results.
+environment-image is like skybox, only the image only shows up in reflective surfaces in the 3D model.
+    -->
+		<div class = "model">
+			<model-viewer
+        style="width: 900px; height: 500px;"
+				alt="3D model can't be displayed."
+				src="https://unimono.sytes.net/Environment.glb"
+				ar="true"
+        skybox-image="https://images.pexels.com/photos/6949272/pexels-photo-6949272.jpeg"
+				environment-image="https://images.pexels.com/photos/6949272/pexels-photo-6949272.jpeg"
+				poster="https://unimono.sytes.net/Environment-poster.png"
+				shadow-intensity="1"
+				camera-controls="true"
+			></model-viewer>
+      This image is a forest that I was designing a while back for a test map.
+    </div>
+	</body>
+</html>
