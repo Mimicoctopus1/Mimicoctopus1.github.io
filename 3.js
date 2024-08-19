@@ -36,14 +36,14 @@ var unimono3d = {
       if(yorv.type == "vector") {
         let vector2 = yorv;
       } else {
-        let vector2 = unimono.vector(yorv, z, ax);
+        let vector2 = unimono3d.vector(yorv, z, ax);
       }
     } else {
-      let vector1 = unimono.vector(xorv, yorv, z);
+      let vector1 = unimono3d.vector(xorv, yorv, z);
       if(ax.type == "vector") {
         let vector2 = ax;
       } else {
-        let vector2 = unimono.vector(ax, ay, az);
+        let vector2 = unimono3d.vector(ax, ay, az);
       }
     }
     
